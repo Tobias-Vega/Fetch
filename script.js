@@ -1,5 +1,4 @@
 const url = "https://rickandmortyapi.com/api/character";
-const miPromesa = fetch(url);
 const elContainer = document.getElementById('container');
 
 
@@ -18,8 +17,12 @@ procesarFetch(url)
         info.results.forEach(element => {
             elContainer.innerHTML += `
             <div class="personajes">
-            <img src="${element.image}" />
-            <h2>${element.name}</h2>
+                <div class="imagenes">
+                    <img src="${element.image}">
+                </div>
+            <h2 class="name">Name: ${element.name}</h2>
+            <h2 class ="species">Specie: ${element.species}</h2>
+            <h2 class ="origin">Origin: ${element.origin.name}</h2>
             </div>
             `;
         });
